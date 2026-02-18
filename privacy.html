@@ -5,35 +5,220 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy – Ration: Track Home Shopping Expenses</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; max-width: 640px; margin: 0 auto; padding: 24px; color: #333; }
-    h1 { font-size: 1.5rem; margin-top: 0; }
-    h2 { font-size: 1.1rem; margin-top: 1.5em; }
-    p { margin: 0.5em 0; }
-    ul { margin: 0.5em 0; padding-left: 1.2em; }
-    .updated { color: #666; font-size: 0.9rem; }
+    :root {
+      --bg: #fafafa;
+      --surface: #fff;
+      --text: #1a1a1a;
+      --text-muted: #5f6368;
+      --primary: #1a73e8;
+      --border: #e8eaed;
+      --shadow: 0 1px 3px rgba(0,0,0,.08);
+      --radius: 12px;
+      --font-en: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --font-ar: 'SF Pro Arabic', 'Segoe UI', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-en);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    body[lang="ar"] { font-family: var(--font-ar); }
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 20px 48px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 20px 0 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .app-name {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 6px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      color: var(--text-muted);
+      text-decoration: none;
+      box-shadow: var(--shadow);
+    }
+    .lang-toggle:hover { border-color: var(--primary); color: var(--primary); }
+    .lang-toggle .active { font-weight: 700; color: var(--primary); }
+    .lang-toggle .sep { opacity: .5; pointer-events: none; }
+    main { padding-top: 28px; }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+    .meta {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    section {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    section h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 10px;
+      color: var(--primary);
+    }
+    section p {
+      margin: 0;
+      color: var(--text);
+    }
+    section p + p { margin-top: 12px; }
+    .lang-content { display: none; }
+    .lang-content.is-active { display: block; }
+    body[dir="rtl"] .wrap { text-align: right; }
+    body[dir="rtl"] section h2 { text-align: right; }
+    body[dir="rtl"] section p { text-align: right; }
+    body[dir="rtl"] header { flex-direction: row-reverse; }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a1a;
+        --surface: #2d2d2d;
+        --text: #e8eaed;
+        --text-muted: #9aa0a6;
+        --border: #3c4043;
+        --shadow: 0 1px 3px rgba(0,0,0,.3);
+      }
+      .lang-toggle { background: var(--surface); color: var(--text-muted); }
+      .lang-toggle:hover { color: var(--primary); }
+      .lang-toggle .active { color: #8ab4f8; }
+    }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p class="updated">Ration: Track Home Shopping Expenses</p>
-  <p class="updated">Last updated: 2025</p>
+  <div class="wrap">
+    <header>
+      <span class="app-name" data-en="Ration: Track Home Shopping Expenses" data-ar="راشن: تتبع مصاريف التسوق المنزلي">Ration: Track Home Shopping Expenses</span>
+      <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="en" data-active="EN">EN</span>
+        <span class="sep">/</span>
+        <span class="ar" data-active="ع">ع</span>
+      </button>
+    </header>
 
-  <h2>Overview</h2>
-  <p>Your data stays on your device. This app does not collect, sell, or share your personal data with third parties for advertising or tracking.</p>
+    <main>
+      <!-- English -->
+      <div id="content-en" class="lang-content is-active" lang="en">
+        <h1>Privacy Policy</h1>
+        <p class="meta">Last updated: 2025</p>
+        <section>
+          <h2>Overview</h2>
+          <p>Your data stays on your device. This app does not collect, sell, or share your personal data with third parties for advertising or tracking.</p>
+        </section>
+        <section>
+          <h2>Data stored on your device</h2>
+          <p>Data such as shopping lists, trips, purchase history, and budget settings are kept only on your device (and in backup files you choose to create). We do not upload this data to our servers.</p>
+        </section>
+        <section>
+          <h2>No tracking</h2>
+          <p>We do not track you across apps or websites, and we do not use your data for targeted advertising.</p>
+        </section>
+        <section>
+          <h2>No selling of data</h2>
+          <p>We do not sell your data to anyone.</p>
+        </section>
+        <section>
+          <h2>Your control</h2>
+          <p>You can delete all your data at any time using “Delete All Data” in the app’s Settings. Export and import of data are under your control.</p>
+        </section>
+        <section>
+          <h2>Contact</h2>
+          <p>If you have questions about this privacy policy, please contact us through the support channel provided in the App Store listing.</p>
+        </section>
+      </div>
 
-  <h2>Data Stored on Your Device</h2>
-  <p>Data such as shopping lists, trips, purchase history, and budget settings are kept only on your device (and in backup files you choose to create). We do not upload this data to our servers.</p>
+      <!-- Arabic -->
+      <div id="content-ar" class="lang-content" lang="ar" dir="rtl">
+        <h1>سياسة الخصوصية</h1>
+        <p class="meta">آخر تحديث: ٢٠٢٥</p>
+        <section>
+          <h2>نظرة عامة</h2>
+          <p>بياناتك تبقى على جهازك. هذا التطبيق لا يجمع ولا يبيع ولا يشارك بياناتك الشخصية مع أطراف ثالثة للإعلان أو التتبع.</p>
+        </section>
+        <section>
+          <h2>البيانات المخزنة على جهازك</h2>
+          <p>البيانات مثل قوائم التسوق والرحلات وسجل المشتريات وإعدادات الميزانية تُحفظ فقط على جهازك (وفي النسخ الاحتياطية التي تختار إنشاءها). نحن لا نرفع هذه البيانات إلى خوادمنا.</p>
+        </section>
+        <section>
+          <h2>بدون تتبع</h2>
+          <p>لا نتابعك عبر التطبيقات أو المواقع، ولا نستخدم بياناتك للإعلانات المستهدفة.</p>
+        </section>
+        <section>
+          <h2>بدون بيع البيانات</h2>
+          <p>لا نبيع بياناتك لأي جهة.</p>
+        </section>
+        <section>
+          <h2>سيطرتك</h2>
+          <p>يمكنك حذف جميع بياناتك في أي وقت من «حذف جميع البيانات» في إعدادات التطبيق. التصدير والاستيراد تحت سيطرتك.</p>
+        </section>
+        <section>
+          <h2>التواصل</h2>
+          <p>إذا كان لديك أسئلة حول سياسة الخصوصية هذه، يرجى التواصل معنا عبر قناة الدعم المتوفرة في صفحة التطبيق على App Store.</p>
+        </section>
+      </div>
+    </main>
+  </div>
 
-  <h2>No Tracking</h2>
-  <p>We do not track you across apps or websites, and we do not use your data for targeted advertising.</p>
+  <script>
+    (function() {
+      var STORAGE_KEY = 'ration_privacy_lang';
+      var currentLang = localStorage.getItem(STORAGE_KEY) || (navigator.language && navigator.language.startsWith('ar') ? 'ar' : 'en');
 
-  <h2>No Selling of Data</h2>
-  <p>We do not sell your data to anyone.</p>
+      function setLang(lang) {
+        currentLang = lang;
+        localStorage.setItem(STORAGE_KEY, lang);
+        document.querySelectorAll('.lang-content').forEach(function(el) { el.classList.remove('is-active'); });
+        var active = document.getElementById('content-' + lang);
+        if (active) active.classList.add('is-active');
+        document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
+        document.body.lang = lang;
+        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        var appName = document.querySelector('.app-name');
+        if (appName) appName.textContent = appName.getAttribute(lang === 'ar' ? 'data-ar' : 'data-en') || appName.textContent;
+        var enSpan = document.querySelector('.lang-toggle .en');
+        var arSpan = document.querySelector('.lang-toggle .ar');
+        if (enSpan) { enSpan.classList.toggle('active', lang === 'en'); enSpan.textContent = enSpan.getAttribute('data-active'); }
+        if (arSpan) { arSpan.classList.toggle('active', lang === 'ar'); arSpan.textContent = arSpan.getAttribute('data-active'); }
+      }
 
-  <h2>Your Control</h2>
-  <p>You can delete all your data at any time using “Delete All Data” in the app’s Settings. Export and import of data are under your control.</p>
+      document.getElementById('langToggle').addEventListener('click', function() {
+        setLang(currentLang === 'en' ? 'ar' : 'en');
+      });
 
-  <h2>Contact</h2>
-  <p>If you have questions about this privacy policy, please contact us through the support channel provided in the App Store listing.</p>
+      setLang(currentLang);
+    })();
+  </script>
 </body>
 </html>
